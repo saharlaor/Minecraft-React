@@ -5,9 +5,12 @@ import TitleScreen from "./TitleScreen/TitleScreen";
 
 function App() {
     const [isStarted, setIsStarted] = useState(false);
+
+    const handleStartClick = () => setIsStarted(true);
+
     return (
         <div className="App">
-            {isStarted ? <Game /> : <TitleScreen />}
+            {isStarted ? <Game /> : <TitleScreen startHandler={handleStartClick} />}
         </div>
     );
 }
