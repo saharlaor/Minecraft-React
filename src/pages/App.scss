@@ -1,38 +1,8 @@
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-}
-
-body {
-  @include flex-center;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  overflow: hidden;
-  &::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: url(../assets/img/Title-Menu-Background.png);
-    background-repeat: repeat;
-    opacity: 0.4;
-    z-index: -1;
-  }
-}
-
 .App {
   display: block;
   position: absolute;
   left: 0;
-  width: calc(100% - 200px);
+  height: 100%;
+  width: 100%;
   overflow: hidden;
 }
