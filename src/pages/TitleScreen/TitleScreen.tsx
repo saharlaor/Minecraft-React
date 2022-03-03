@@ -9,6 +9,6 @@ export type TitleScreenProps = {
 export default function Titlescreen({startHandler}: TitleScreenProps) {
     return (<div className="TitleScreen">
         <h1 className="TitleScreen__title">Minecraft</h1>
-        <Button handleClick={e=>startHandler()} contents="Start" />
+        <Button handleClick={e=>startHandler()} contents="START" />
     </div>);
 }

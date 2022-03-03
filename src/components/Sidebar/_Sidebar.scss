@@ -1,0 +1,19 @@
+$sidebar-background: #896041;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Sidebar {
+  @include flex-center;
+  flex-direction: column;
+  gap: 5%;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 200px;
+  float: right;
+  background-color: $sidebar-background;
+}
