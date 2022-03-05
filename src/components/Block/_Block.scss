@@ -1,0 +1,31 @@
+$texturesPath: "../../assets/textures";
+$blockTypes: (
+        "dirt": "#{$texturesPath}/Dirt",
+        "grass": "#{$texturesPath}/GrassBlock",
+        "leaves": "#{$texturesPath}/Leaves",
+        "sand": "#{$texturesPath}/Sand",
+        "stone": "#{$texturesPath}/Stone",
+        "wood": "#{$texturesPath}/Wood",
+);
+
+
+
+.Block {
+  &:hover {
+    border: 1px solid #fff;
+    border-right-width: 2px;
+    cursor: pointer;
+  }
+  @each $key, $path in $blockTypes {
+    &[data-contents="#{$key}"] {
+      background: url(#{$path}.png)
+      no-repeat
+      center
+      center /
+        cover;
+    }
+    @if $path == "empty" {
+      background: transparent;
+    }
+  }
+}

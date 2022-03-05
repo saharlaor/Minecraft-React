@@ -1,0 +1,11 @@
+.World {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  height: 100vmin;
+  width: 100vmin;
+  max-height: calc(100vw - 200px);
+  margin-right: 200px;
+  background: url(../../assets/img/Sky-Background.png);
+  background-size: contain;
+}
