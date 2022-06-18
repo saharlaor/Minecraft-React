@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
-import './App.scss';
+
 import Game from "./Game/Game";
-import TitleScreen from "./TitleScreen/TitleScreen";
+import { TitleScreen } from "./TitleScreen/TitleScreen";
+
+import './App.scss';
 
 function App() {
     const [isStarted, setIsStarted] = useState(false);

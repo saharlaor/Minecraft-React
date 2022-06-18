@@ -1,11 +1,11 @@
 import React from 'react';
-import Sidebar from "../../components/Sidebar/Sidebar";
-import "./_Game.scss";
-import World from "../../components/World/World";
+import { Sidebar } from "../../components/Sidebar/Sidebar";
+import "./Game.scss";
+import { World } from "../../components/World/World";
 
-export type GameProps = {}
+export interface IGameProps {}
 
-export default function Game({}: GameProps) {
+export default function Game() {
     return (<div className="Game">
         <Sidebar />
         <World />

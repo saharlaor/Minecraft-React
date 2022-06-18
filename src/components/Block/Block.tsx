@@ -1,10 +1,10 @@
 import React from 'react';
-import './_Block.scss';
+import './Block.scss';
 
-export type BlockProps = {
+export type IBlockProps = {
     type: string;
 }
 
-export default function Block({type}: BlockProps) {
+export const Block = ({type}: IBlockProps) => {
     return (<div className="Block" data-contents={type}/>);
 }

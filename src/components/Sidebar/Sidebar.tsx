@@ -1,10 +1,10 @@
 import React from 'react';
-import "./_Sidebar.scss";
-import Tool from "../Tool/Tool";
+import "./Sidebar.scss";
+import { Tool } from "../Tool/Tool";
 
-export type SidebarProps = {}
+export interface ISidebarProps {}
 
-export default function Sidebar({}: SidebarProps) {
+export const Sidebar = () => {
     return (<aside className="Sidebar">
         {/* TODO: Tool components */}
         <Tool toolName={"pickaxe"}/>
@@ -13,4 +13,5 @@ export default function Sidebar({}: SidebarProps) {
         {/* TODO: Inventory component */}
         {/* TODO: Menu - reset, help... */}
     </aside>);
+
 }

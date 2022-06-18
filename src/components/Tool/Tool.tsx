@@ -2,7 +2,7 @@ import React from 'react';
 import PickaxeImg from '../../assets/img/Pickaxe.png';
 import AxeImg from '../../assets/img/Axe.png';
 import ShovelImg from '../../assets/img/Shovel.png';
-import Button from "../Button/Button";
+import { Button } from "../Button/Button";
 
 const TOOLS_DICT: { [name: string]: string } = {
     pickaxe: PickaxeImg,
@@ -10,12 +10,12 @@ const TOOLS_DICT: { [name: string]: string } = {
     shovel: ShovelImg,
 }
 
-export type ToolProps = {
+export interface IToolProps {
     toolName: string;
 }
 
-export default function Tool({toolName}: ToolProps) {
+export const Tool = ({toolName}: IToolProps) => {
     return (<Button handleClick={e=>undefined}>
-        <img src={TOOLS_DICT[toolName]}/>
+        <img src={TOOLS_DICT[toolName]} alt={toolName}/>
     </Button>);
 }

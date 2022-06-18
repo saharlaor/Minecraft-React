@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import Block from '../Block/Block';
-import './_World.scss';
+import { Block } from '../Block/Block';
+import './World.scss';
 
 enum BLOCK_TYPE_ENUM {
     empty,
@@ -35,9 +35,9 @@ const BASIC_WORLD = [
     [5, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 1, 1, 1],
 ];
 
-export type WorldProps = {}
+export interface IWorldProps {}
 
-export default function World({}: WorldProps) {
+export const World = () => {
     const [matrix, setMatrix] = useState(Array.from({length: 20}, v => Array<JSX.Element>(20)));
 
     useEffect(() => {
@@ -46,7 +46,7 @@ export default function World({}: WorldProps) {
                 row.map((val) => <Block type={BLOCK_TYPE_ENUM[val]} />)
             )
         )
-    });
+    }, [setMatrix]);
 
     return (<div className="World">
         {matrix}
