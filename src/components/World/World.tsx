@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { Block } from '../Block/Block';
+import {Block, BlockType} from '../Block/Block';
 import './World.scss';
 
 enum BLOCK_TYPE_ENUM {
@@ -40,10 +40,15 @@ export interface IWorldProps {}
 export const World = () => {
     const [matrix, setMatrix] = useState(Array.from({length: 20}, v => Array<JSX.Element>(20)));
 
+    const handleBlockChange = (type: BlockType, coordinates: [number, number]) => {
+        const [x, y] = coordinates;
+        setMatrix(prev => [...prev.slice(0, y),[...prev[y].slice(0,x), <Block type={type} coordinates={[x, y]} handleClick={handleBlockChange} />, ...prev[y].slice(x + 1)], ...prev.slice(y + 1)]);
+    }
+
     useEffect(() => {
         setMatrix(() =>
-            BASIC_WORLD.map((row) => 
-                row.map((val) => <Block type={BLOCK_TYPE_ENUM[val]} />)
+            BASIC_WORLD.map((row, y) =>
+                row.map((val, x) => <Block type={BLOCK_TYPE_ENUM[val] as BlockType} coordinates={[x, y]} handleClick={handleBlockChange} />)
             )
         )
     }, [setMatrix]);

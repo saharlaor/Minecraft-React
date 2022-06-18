@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import {BlockType} from "../components/Block/Block";
 
 export type ToolType = "pickaxe" | "axe" | "shovel";
 
