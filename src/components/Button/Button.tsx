@@ -5,8 +5,9 @@ export interface IButtonProps {
     handleClick: MouseEventHandler;
     contents?: string;
     children?: ReactNode;
+    [x:string]: any;
 }
 
-export const Button = ({handleClick, contents, children}: IButtonProps) => {
-    return (<button className="Button" onClick={handleClick}>{contents ? contents : children}</button>);
+export const Button = ({handleClick, contents, children, ...props}: IButtonProps) => {
+    return (<button className={`Button ${props.className || ''}`} onClick={handleClick}>{contents ? contents : children}</button>);
 }
