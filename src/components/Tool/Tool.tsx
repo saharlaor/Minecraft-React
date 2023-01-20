@@ -1,13 +1,12 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import {RootState} from "../../redux/store";
-import {setTool, ToolType} from "../../redux/toolSlice";
+import { RootState } from "../../redux/store";
+import { setTool, ToolType } from "../../redux/toolSlice";
 import PickaxeImg from '../../assets/img/Pickaxe.png';
 import AxeImg from '../../assets/img/Axe.png';
 import ShovelImg from '../../assets/img/Shovel.png';
 import { Button } from "../Button/Button";
-import {BlockType} from "../Block/Block";
 
 import './Tool.scss'
 

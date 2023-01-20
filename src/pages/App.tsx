@@ -1,18 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from "react-redux";
 
+import { RootState } from "../redux/store";
+import { setIsTitleScreenOpen } from "../redux/titleScreenSlice";
 import Game from "./Game/Game";
 import { TitleScreen } from "./TitleScreen/TitleScreen";
 
 import './App.scss';
 
 function App() {
-    const [isStarted, setIsStarted] = useState(false);
+    const {isTitleScreenOpen} = useSelector((state: RootState) => state.titleScreen);
+    const dispatch = useDispatch();
 
-    const handleStartClick = () => setIsStarted(true);
+    const handleStartClick = () => dispatch(setIsTitleScreenOpen(false));
 
     return (
         <div className="App">
-            {isStarted ? <Game /> : <TitleScreen startHandler={handleStartClick} />}
+            {isTitleScreenOpen ? <TitleScreen startHandler={handleStartClick} /> : <Game />}
         </div>
     );
 }

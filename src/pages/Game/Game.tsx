@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { Sidebar } from "../../components/Sidebar/Sidebar";
-import "./Game.scss";
 import { World } from "../../components/World/World";
+
+import "./Game.scss";
 
 export interface IGameProps {}
 

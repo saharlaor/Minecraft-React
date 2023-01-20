@@ -1,9 +1,10 @@
-import React, {useEffect} from 'react';
-import {useSelector} from "react-redux";
+import React from 'react';
+import { useSelector } from "react-redux";
+
+import { RootState } from "../../redux/store";
+import { checkBlockBreak } from "../Tool/Tool";
 
 import './Block.scss';
-import {RootState} from "../../redux/store";
-import {checkBlockBreak} from "../Tool/Tool";
 
 export type BlockType = "dirt" | "empty" | "grass" | "leaves" | "sand" | "stone" | "wood";
 

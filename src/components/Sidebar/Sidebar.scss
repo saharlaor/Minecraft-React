@@ -16,4 +16,22 @@ $sidebar-background: #896041;
   width: 200px;
   float: right;
   background-color: $sidebar-background;
+
+  > .Sidebar__reset-button {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+
+    img {
+      height: 100%;
+      object-position: -2px;
+      transform: rotate(90deg);
+      transition: all 0.1s 0s ease-out;
+
+      &:hover {
+        object-position: -1px;
+        transform: rotate(45deg);
+      }
+    }
+  }
 }
